@@ -30,6 +30,12 @@ function Dashboard() {
     }
   };
 
+  const logout = async () => {
+    localStorage.setItem("token", "");
+    navigate("/login");
+
+  }
+
   useEffect(() => {
     const token = localStorage.getItem("token");
 
@@ -50,12 +56,19 @@ function Dashboard() {
   return (
     <>
       <main>
+
+        <a onClick={logout}>Logout</a>
+        
+        <Link to={`/new`}>New</Link>
+        <br />
         <button onClick={getMessages}>Get Messages</button>
+        
         {messages?.map((message) => (
           <li>
             <Link to={`/userdata/${message._id}`}>{message.Message}</Link>
           </li>
         ))}
+
       </main>
     </>
   );

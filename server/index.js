@@ -97,6 +97,7 @@ app.get('/api/message', verifyAccessToken, async (req, res)=>{
 })
 
 app.post("/api/login", async (req, res) => {
+  console.log(req.body);
   try {
     const user = await User.findOne({
       email: req.body.email,

@@ -1,0 +1,11 @@
+{
+  "name": "server",
+  "version": "1.0.0",
+  "description": "template server for MERN app",
+  "main": "index.js",
+  "author": "@acmahaja",
+  "license": "MIT",
+  "scripts": {
+    "start": "nodemon index.js"
+  }
+}
